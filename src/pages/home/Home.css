@@ -1,0 +1,16 @@
+.banner {
+  display: flex;
+  max-width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.playerWrapper {
+  display: flex;
+  height: 400px;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  background-color: #f3f3f4;
+}
