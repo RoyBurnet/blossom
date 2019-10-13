@@ -11,7 +11,7 @@ import "./Header.css"
   export default class Header extends Component {
     render() {
       return (
-        <Navbar  bg="light" expand="lg" collapseOnSelect style={{height: "100px"}}>
+        <Navbar  bg="white" expand="lg" collapseOnSelect className="menu">
         <Navbar.Brand href="/"><Image src={logo} className="menulogo"/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

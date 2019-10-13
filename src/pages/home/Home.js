@@ -3,7 +3,8 @@ import axios from 'axios';
 import Articles from '../../components/articles/Articles';
 import Image from 'react-bootstrap/Image';
 
-import Player from '../../components/Player/Player'
+import Player from '../../components/Player/Player';
+import NotableEvents from '../../components/NotableEvents/notableEvents'
 
 import './Home.css';
 
@@ -36,6 +37,7 @@ class Home extends Component {
           <div className="playerWrapper">
             <Player />
           </div>
+          <NotableEvents />
         </div>
       );
     }

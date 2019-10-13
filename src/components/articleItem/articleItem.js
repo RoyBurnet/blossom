@@ -35,8 +35,8 @@ export default class ArticleItem extends Component {
         <Link to={`/article/${id}`}>
         <Card className="cardBox">
           <Card.Img src={imgUrl} className="image" />
-          <Card.ImgOverlay style={{backgroundColor: '#ff0099', opacity: "0.2"}}>
-            <Card.Title style={{color: "white", zIndex: "10", fontSize: "30px"}}>{title.rendered}</Card.Title>
+          <Card.ImgOverlay style={{backgroundColor: '#ff0099', opacity: "0.2", clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 50%)"}}>
+          <Card.Title style={{color: "white", fontSize: "30px"}}>{title.rendered}</Card.Title>
           </Card.ImgOverlay>
         </Card>
         </Link>

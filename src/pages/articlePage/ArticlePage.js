@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ArticleImage from '../../components/articleImage/articleImage';
 
+import ArticleThree from '../../components/articleThree/afticleThree';
 export default class ArticlePage extends Component {
   state = {
     article: {},
@@ -32,6 +33,7 @@ export default class ArticlePage extends Component {
             ></div>
             <Link to="/">Go Back</Link>
           </div>
+          <ArticleThree />
         </div>
       );
     }

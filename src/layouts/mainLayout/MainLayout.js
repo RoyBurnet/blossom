@@ -8,6 +8,7 @@ export default class Layout extends Component {
     return (
       <div className="layout">
         <Header />
+        <div style={{marginTop: '100px'}}></div>
         {this.props.children}
         <div className="footer">
           <div className="footer-content">Whososo</div>
