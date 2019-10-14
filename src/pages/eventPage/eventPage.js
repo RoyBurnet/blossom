@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import NotableEvents from '../../components/NotableEvents/notableEvents';
 
+import "./evnetPage.css"
+
 export default class EventPage extends Component {
   state = {
     event: {},
@@ -27,7 +29,7 @@ export default class EventPage extends Component {
     const image = event.featured_media;
     if(isLoaded){
       return(
-        <div>
+        <div className="eventPageContent">
           <EventImage image={image}/>
           <div style={{ maxWidth: '600px', marginLeft: '60px' }}>
             <h1>{event.title.rendered}</h1>
@@ -36,7 +38,7 @@ export default class EventPage extends Component {
             ></div>
             <Link to="/">Go Back</Link>
           </div>
-          <NotableEvents />
+          {/* <NotableEvents /> */}
         </div>
       )
     }

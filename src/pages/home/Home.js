@@ -4,7 +4,7 @@ import Articles from '../../components/articles/Articles';
 import Image from 'react-bootstrap/Image';
 
 import Player from '../../components/Player/Player';
-import NotableEvents from '../../components/NotableEvents/notableEvents'
+import NotableEvents from '../../components/NotableEvents/notableEvents';
 
 import './Home.css';
 
@@ -37,7 +37,10 @@ class Home extends Component {
           <div className="playerWrapper">
             <Player />
           </div>
-          <NotableEvents />
+          {/* <NotableEvents /> */}
+          <div className="footer" style={{maxHeight: "30px"}}>
+          <div className="footer-content">Concrete Blossom</div>
+        </div>
         </div>
       );
     }

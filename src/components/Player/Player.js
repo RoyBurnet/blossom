@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import MixCloudPlayer from 'react-player/lib/players/Mixcloud'
+import "./Player.css"
 
 export default class Player extends Component {
   render () {
-    return ( <div> <MixCloudPlayer url='https://www.mixcloud.com/mixcloud/meet-the-curators/
-    ' playing /> </div>)
+    return ( <div className="player"> <MixCloudPlayer url='https://www.mixcloud.com/KioskRadio/mono-with-mo-jakob-kiosk-radio-13102019/
+    '    width='100%'
+    height='100%'/> </div>)
   }
 }

@@ -1,0 +1,12 @@
+.articleContent{
+  color: #ff0099;
+  max-width: 600px;
+  margin-left:  60px;
+}
+
+@media (max-width: 450px) {
+  .articleContent {
+    padding: 20px;
+    margin-left:  0px;
+  }
+}

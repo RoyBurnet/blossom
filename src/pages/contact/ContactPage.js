@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import ContactBanner from '../../components/AboutBanner/aboutBanner';
 
+import "./Contact.css"
+
 class Contact extends Component {
   state = {
     contactPageData: {},
@@ -23,12 +25,17 @@ class Contact extends Component {
       return (
         <div>
           <ContactBanner image={contactPageData.featured_media} />
+          <div className="contactContent">
           <h1>{contactPageData.title.rendered}</h1>
           <div
             dangerouslySetInnerHTML={{
               __html: contactPageData.content.rendered
             }}
           ></div>
+          </div>
+          <div className="footer-stick">
+            <div className="footer-content">Concrete Blossom</div>
+          </div>
         </div>
       );
     }

@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import AboutBanner from '../../components/AboutBanner/aboutBanner';
 
+import './About.css';
+
 class About extends Component {
   state = {
     aboutData: {},
@@ -21,10 +23,15 @@ class About extends Component {
       return (
         <div>
           <AboutBanner image={aboutData.featured_media} />
+          <div className="AboutContent">
           <h1>{aboutData.title.rendered}</h1>
-          <div
-            dangerouslySetInnerHTML={{ __html: aboutData.content.rendered }}
-          ></div>
+            <div
+              dangerouslySetInnerHTML={{ __html: aboutData.content.rendered }}
+            ></div>
+          </div>
+          <div className="footer-stick">
+          <div className="footer-content">Concrete Blossom</div>
+        </div>
         </div>
       );
     }
