@@ -85,7 +85,7 @@ class ArticleItem extends Component {
   componentDidMount() {
     const { featured_media } = this.props.article;
     const getImageUrl = axios.get(
-      `https://fesinternet.nl/api//wp-json/wp/v2/media/${featured_media}`
+      `https://fesinternet.nl/api/wp-json/wp/v2/media/${featured_media}`
     );
 
     Promise.all([getImageUrl])

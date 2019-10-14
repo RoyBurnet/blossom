@@ -13,7 +13,7 @@ class Contact extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://fesinternet.nl/api//wp-json/wp/v2/pages/74`)
+      .get(`https://fesinternet.nl/api/wp-json/wp/v2/pages/74`)
       .then(res =>
         this.setState({ contactPageData: res.data, isLoaded: true })
       );

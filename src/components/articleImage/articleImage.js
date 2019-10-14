@@ -11,7 +11,7 @@ export default class articleImage extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://test.fesinternet.nl/wp-json/wp/v2/media/${this.props.imageData}`
+        `https://fesinternet.nl/api/wp-json/wp/v2/media/${this.props.imageData}`
       )
       .then(res =>
         this.setState({
