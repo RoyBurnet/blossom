@@ -13,7 +13,7 @@ class About extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://test.fesinternet.nl/wp-json/wp/v2/pages/37`)
+      .get(`https://fesinternet.nl/api//wp-json/wp/v2/pages/37`)
       .then(res => this.setState({ aboutData: res.data, isLoaded: true }));
   }
 
@@ -24,14 +24,14 @@ class About extends Component {
         <div>
           <AboutBanner image={aboutData.featured_media} />
           <div className="AboutContent">
-          <h1>{aboutData.title.rendered}</h1>
+            <h1>{aboutData.title.rendered}</h1>
             <div
               dangerouslySetInnerHTML={{ __html: aboutData.content.rendered }}
             ></div>
           </div>
           <div className="footer-stick">
-          <div className="footer-content">Concrete Blossom</div>
-        </div>
+            <div className="footer-content">Concrete Blossom</div>
+          </div>
         </div>
       );
     }

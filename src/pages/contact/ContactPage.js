@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import ContactBanner from '../../components/AboutBanner/aboutBanner';
 
-import "./Contact.css"
+import './Contact.css';
 
 class Contact extends Component {
   state = {
@@ -13,7 +13,7 @@ class Contact extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://test.fesinternet.nl/wp-json/wp/v2/pages/74`)
+      .get(`https://fesinternet.nl/api//wp-json/wp/v2/pages/74`)
       .then(res =>
         this.setState({ contactPageData: res.data, isLoaded: true })
       );
@@ -26,12 +26,12 @@ class Contact extends Component {
         <div>
           <ContactBanner image={contactPageData.featured_media} />
           <div className="contactContent">
-          <h1>{contactPageData.title.rendered}</h1>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: contactPageData.content.rendered
-            }}
-          ></div>
+            <h1>{contactPageData.title.rendered}</h1>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: contactPageData.content.rendered
+              }}
+            ></div>
           </div>
           <div className="footer-stick">
             <div className="footer-content">Concrete Blossom</div>

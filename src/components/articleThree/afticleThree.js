@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import ArticleItem from '../articleItem/articleItem'
+import ArticleItem from '../articleItem/articleItem';
 
 export default class ArticleThree extends Component {
   state = {
@@ -16,7 +15,7 @@ export default class ArticleThree extends Component {
 
   componentDidMount() {
     axios
-      .get('http://test.fesinternet.nl/wp-json/wp/v2/article?per+page=3')
+      .get('https://fesinternet.nl/api//wp-json/wp/v2/article?per+page=3')
       .then(res =>
         this.setState({
           articles: res.data,
@@ -34,7 +33,7 @@ export default class ArticleThree extends Component {
           <Row>
             {articles.map(article => (
               <Col xs>
-                <ArticleItem article={article} key={article.id}/>
+                <ArticleItem article={article} key={article.id} />
               </Col>
             ))}
           </Row>

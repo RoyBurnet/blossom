@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import "./ArticlePage.css"
+import './ArticlePage.css';
 
 // import ArticleItem from '../../components/articleItem/articleItem'
 // import ArticleThree from '../../components/articleThree/afticleThree';
@@ -22,10 +22,10 @@ class ArticlePage extends Component {
 
   componentDidMount() {
     const getArticle = axios.get(
-      `http://test.fesinternet.nl/wp-json/wp/v2/article/${this.props.match.params.id}`
+      `https://fesinternet.nl/api//wp-json/wp/v2/article/${this.props.match.params.id}`
     );
     const getMultipleArticles = axios.get(
-      'http://test.fesinternet.nl/wp-json/wp/v2/article?per+page=3'
+      'https://fesinternet.nl/api//wp-json/wp/v2/article?per+page=3'
     );
 
     Promise.all([getArticle, getMultipleArticles]).then(res =>
@@ -38,8 +38,8 @@ class ArticlePage extends Component {
   }
 
   handleClick() {
-    console.log()
-  };
+    console.log();
+  }
 
   render() {
     const { article, isLoaded, articles } = this.state;
@@ -55,7 +55,7 @@ class ArticlePage extends Component {
             ></div>
             <Link to="/">Go Back</Link>
           </div>
-{/* 
+          {/* 
           <Container>
             <Row>
               {articles.map(article => (
@@ -85,7 +85,7 @@ class ArticleItem extends Component {
   componentDidMount() {
     const { featured_media } = this.props.article;
     const getImageUrl = axios.get(
-      `http://test.fesinternet.nl/wp-json/wp/v2/media/${featured_media}`
+      `https://fesinternet.nl/api//wp-json/wp/v2/media/${featured_media}`
     );
 
     Promise.all([getImageUrl])
@@ -125,4 +125,4 @@ class ArticleItem extends Component {
   }
 }
 
-export default ArticlePage
+export default ArticlePage;

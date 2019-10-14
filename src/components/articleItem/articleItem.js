@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import Card from 'react-bootstrap/Card';
 import './articleItem.css';
@@ -14,7 +14,7 @@ export default class ArticleItem extends Component {
   componentDidMount() {
     const { featured_media } = this.props.article;
     const getImageUrl = axios.get(
-      `http://test.fesinternet.nl/wp-json/wp/v2/media/${featured_media}`
+      `https://fesinternet.nl/api//wp-json/wp/v2/media/${featured_media}`
     );
 
     Promise.all([getImageUrl])
@@ -33,12 +33,20 @@ export default class ArticleItem extends Component {
     if (isLoaded) {
       return (
         <Link to={`/article/${id}`}>
-        <Card className="cardBox">
-          <Card.Img src={imgUrl} className="image" />
-          <Card.ImgOverlay style={{backgroundColor: '#ff0099', opacity: "0.2", clipPath: "polygon(0 0, 100% 0, 100% 50%, 0 50%)"}}>
-          <Card.Title style={{color: "white", fontSize: "30px"}}>{title.rendered}</Card.Title>
-          </Card.ImgOverlay>
-        </Card>
+          <Card className="cardBox">
+            <Card.Img src={imgUrl} className="image" />
+            <Card.ImgOverlay
+              style={{
+                backgroundColor: '#ff0099',
+                opacity: '0.2',
+                clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)'
+              }}
+            >
+              <Card.Title style={{ color: 'white', fontSize: '30px' }}>
+                {title.rendered}
+              </Card.Title>
+            </Card.ImgOverlay>
+          </Card>
         </Link>
       );
     }

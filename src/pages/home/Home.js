@@ -15,14 +15,12 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get('http://test.fesinternet.nl/wp-json/wp/v2/media/70')
-      .then(res =>
-        this.setState({
-          featuredMedia: res.data.source_url,
-          isLoaded: true
-        })
-      );
+    axios.get('https://fesinternet.nl/api//wp-json/wp/v2/media/70').then(res =>
+      this.setState({
+        featuredMedia: res.data.source_url,
+        isLoaded: true
+      })
+    );
   }
 
   render() {
@@ -38,9 +36,9 @@ class Home extends Component {
             <Player />
           </div>
           {/* <NotableEvents /> */}
-          <div className="footer" style={{maxHeight: "30px"}}>
-          <div className="footer-content">Concrete Blossom</div>
-        </div>
+          <div className="footer" style={{ maxHeight: '30px' }}>
+            <div className="footer-content">Concrete Blossom</div>
+          </div>
         </div>
       );
     }

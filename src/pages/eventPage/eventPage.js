@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import NotableEvents from '../../components/NotableEvents/notableEvents';
 
-import "./evnetPage.css"
+import './evnetPage.css';
 
 export default class EventPage extends Component {
   state = {
@@ -15,7 +15,7 @@ export default class EventPage extends Component {
   componentDidMount() {
     axios
       .get(
-        `http://test.fesinternet.nl/wp-json/wp/v2/event/${this.props.match.params.id}`
+        `https://fesinternet.nl/api//wp-json/wp/v2/event/${this.props.match.params.id}`
       )
       .then(res =>
         this.setState({
@@ -25,12 +25,12 @@ export default class EventPage extends Component {
       );
   }
   render() {
-    const {event, isLoaded} = this.state;
+    const { event, isLoaded } = this.state;
     const image = event.featured_media;
-    if(isLoaded){
-      return(
+    if (isLoaded) {
+      return (
         <div className="eventPageContent">
-          <EventImage image={image}/>
+          <EventImage image={image} />
           <div style={{ maxWidth: '600px', marginLeft: '60px' }}>
             <h1>{event.title.rendered}</h1>
             <div
@@ -40,8 +40,8 @@ export default class EventPage extends Component {
           </div>
           {/* <NotableEvents /> */}
         </div>
-      )
+      );
     }
-    return <h3>Is Loading .. .</h3>
+    return <h3>Is Loading .. .</h3>;
   }
 }

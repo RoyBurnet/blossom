@@ -11,7 +11,7 @@ export default class NotableImage extends Component {
   componentDidMount() {
     axios
       .get(
-        `http://test.fesinternet.nl/wp-json/wp/v2/media/${this.props.image}`
+        `https://fesinternet.nl/api//wp-json/wp/v2/media/${this.props.image}`
       )
       .then(res =>
         this.setState({
@@ -26,7 +26,12 @@ export default class NotableImage extends Component {
     if (isLoaded) {
       return (
         <>
-          <Image className="img" fluid style={{height: "100%"}}src={notableImage.source_url} />
+          <Image
+            className="img"
+            fluid
+            style={{ height: '100%' }}
+            src={notableImage.source_url}
+          />
         </>
       );
     }

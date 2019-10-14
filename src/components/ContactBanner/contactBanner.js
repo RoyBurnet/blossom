@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Image from 'react-bootstrap/Image';
 import axios from 'axios';
-import "./contactBanner.css"
+import './contactBanner.css';
 
 export default class ContactBanner extends Component {
   state = {
@@ -12,7 +12,7 @@ export default class ContactBanner extends Component {
   componentDidMount() {
     axios
       .get(
-        `http://test.fesinternet.nl/wp-json/wp/v2/media/${this.props.image}`
+        `https://fesinternet.nl/api//wp-json/wp/v2/media/${this.props.image}`
       )
       .then(res =>
         this.setState({
@@ -23,10 +23,9 @@ export default class ContactBanner extends Component {
   }
 
   render() {
-
     return (
       <div className="banner">
-        <Image className="img" src={this.state.bannerImage}  />
+        <Image className="img" src={this.state.bannerImage} />
       </div>
     );
   }
