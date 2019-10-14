@@ -22,10 +22,10 @@ class ArticlePage extends Component {
 
   componentDidMount() {
     const getArticle = axios.get(
-      `https://fesinternet.nl/api//wp-json/wp/v2/article/${this.props.match.params.id}`
+      `https://fesinternet.nl/api/wp-json/wp/v2/article/${this.props.match.params.id}`
     );
     const getMultipleArticles = axios.get(
-      'https://fesinternet.nl/api//wp-json/wp/v2/article?per+page=3'
+      'https://fesinternet.nl/api/wp-json/wp/v2/article?per+page=3'
     );
 
     Promise.all([getArticle, getMultipleArticles]).then(res =>
