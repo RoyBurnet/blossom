@@ -15,7 +15,7 @@ export default class EventPage extends Component {
   componentDidMount() {
     axios
       .get(
-        `http://localhost:8888/blossom/wp-json/wp/v2/event/${this.props.match.params.id}`
+        `http://test.fesinternet.nl/wp-json/wp/v2/event/${this.props.match.params.id}`
       )
       .then(res =>
         this.setState({

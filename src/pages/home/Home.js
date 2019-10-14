@@ -16,7 +16,7 @@ class Home extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:8888/blossom/wp-json/wp/v2/media/70')
+      .get('http://test.fesinternet.nl/wp-json/wp/v2/media/70')
       .then(res =>
         this.setState({
           featuredMedia: res.data.source_url,

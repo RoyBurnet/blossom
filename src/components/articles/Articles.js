@@ -15,7 +15,7 @@ export default class Articles extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:8888/blossom/wp-json/wp/v2/article?per+page=6')
+      .get('http://test.fesinternet.nl/wp-json/wp/v2/article?per+page=6')
       .then(res =>
         this.setState({
           articles: res.data,

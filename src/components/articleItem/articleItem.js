@@ -14,7 +14,7 @@ export default class ArticleItem extends Component {
   componentDidMount() {
     const { featured_media } = this.props.article;
     const getImageUrl = axios.get(
-      `http://localhost:8888/blossom/wp-json/wp/v2/media/${featured_media}`
+      `http://test.fesinternet.nl/wp-json/wp/v2/media/${featured_media}`
     );
 
     Promise.all([getImageUrl])

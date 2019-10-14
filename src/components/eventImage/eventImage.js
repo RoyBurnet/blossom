@@ -11,7 +11,7 @@ export default class EventImage extends Component {
   componentDidMount() {
     axios
       .get(
-        `http://localhost:8888/blossom/wp-json/wp/v2/media/${this.props.image}`
+        `http://test.fesinternet.nl/wp-json/wp/v2/media/${this.props.image}`
       )
       .then(res =>
         this.setState({
