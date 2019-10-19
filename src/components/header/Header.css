@@ -1,11 +1,9 @@
 .menulogo {
-  height: 60px;
+  height: 30px;
   width: auto;
   margin: 10px;
 }
  .menu{
-  position: fixed;
-  width: 90vw; 
-  z-index: 100;
-  margin-bottom: 10px; 
+  /* position: fixed;
+  z-index: 100; */
  }

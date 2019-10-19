@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Image from 'react-bootstrap/Image';
 import axios from 'axios';
-import './aboutBanner.css';
 
-export default class AboutBanner extends Component {
+import "./Banner.css"
+
+export default class Banner extends Component {
   state = {
     bannerImage: '',
     isLoaded: false
@@ -12,7 +13,7 @@ export default class AboutBanner extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://fesinternet.nl/api//wp-json/wp/v2/media/${this.props.image}`
+        `https://fesinternet.nl/api/wp-json/wp/v2/media/${this.props.image}`
       )
       .then(res =>
         this.setState({

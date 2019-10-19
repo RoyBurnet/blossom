@@ -11,7 +11,7 @@ export default class NotableImage extends Component {
   componentDidMount() {
     axios
       .get(
-        `https://fesinternet.nl/api//wp-json/wp/v2/media/${this.props.image}`
+        `https://fesinternet.nl/api/wp-json/wp/v2/media/${this.props.image}`
       )
       .then(res =>
         this.setState({

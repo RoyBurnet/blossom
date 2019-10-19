@@ -15,7 +15,7 @@ export default class ArticleThree extends Component {
 
   componentDidMount() {
     axios
-      .get('https://fesinternet.nl/api//wp-json/wp/v2/article?per+page=3')
+      .get('https://fesinternet.nl/api/wp-json/wp/v2/article?per+page=3')
       .then(res =>
         this.setState({
           articles: res.data,

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import './articleItem.css';
 
-export default class ArticleItem extends Component {
+class ArticleItem extends Component {
   state = {
     imgUrl: '',
     isLoaded: false
@@ -14,7 +14,7 @@ export default class ArticleItem extends Component {
   componentDidMount() {
     const { featured_media } = this.props.article;
     const getImageUrl = axios.get(
-      `https://fesinternet.nl/api//wp-json/wp/v2/media/${featured_media}`
+      `https://fesinternet.nl/api/wp-json/wp/v2/media/${featured_media}`
     );
 
     Promise.all([getImageUrl])
@@ -30,6 +30,7 @@ export default class ArticleItem extends Component {
   render() {
     const { title, id } = this.props.article;
     const { imgUrl, isLoaded } = this.state;
+
     if (isLoaded) {
       return (
         <Link to={`/article/${id}`}>
@@ -53,3 +54,5 @@ export default class ArticleItem extends Component {
     return <h3>Loading ...</h3>;
   }
 }
+
+export default ArticleItem;

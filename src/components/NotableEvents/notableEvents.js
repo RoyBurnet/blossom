@@ -16,7 +16,7 @@ export default class notableEvents extends Component {
   };
 
   componentDidMount() {
-    axios.get(`https://fesinternet.nl/api//wp-json/wp/v2/event`).then(res => {
+    axios.get(`https://fesinternet.nl/api/wp-json/wp/v2/event`).then(res => {
       this.setState({
         event1: res.data[0],
         event2: res.data[1],

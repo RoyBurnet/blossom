@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import ContactBanner from '../../components/AboutBanner/aboutBanner';
+import Banner from '../../components/Banner/Banner';
 
 import './Contact.css';
 
@@ -24,7 +24,7 @@ class Contact extends Component {
     if (isLoaded) {
       return (
         <div>
-          <ContactBanner image={contactPageData.featured_media} />
+          <Banner image={contactPageData.featured_media} />
           <div className="contactContent">
             <h1>{contactPageData.title.rendered}</h1>
             <div

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import AboutBanner from '../../components/AboutBanner/aboutBanner';
+import Banner from '../../components/Banner/Banner';
 
 import './About.css';
 
@@ -13,7 +13,7 @@ class About extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://fesinternet.nl/api//wp-json/wp/v2/pages/37`)
+      .get(`https://fesinternet.nl/api/wp-json/wp/v2/pages/37`)
       .then(res => this.setState({ aboutData: res.data, isLoaded: true }));
   }
 
@@ -22,7 +22,7 @@ class About extends Component {
     if (isLoaded) {
       return (
         <div>
-          <AboutBanner image={aboutData.featured_media} />
+          <Banner image={aboutData.featured_media} />
           <div className="AboutContent">
             <h1>{aboutData.title.rendered}</h1>
             <div
