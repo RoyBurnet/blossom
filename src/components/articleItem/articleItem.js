@@ -17,6 +17,8 @@ class ArticleItem extends Component {
       `https://fesinternet.nl/api/wp-json/wp/v2/media/${featured_media}`
     );
 
+    //this.props.article.featured_media
+
     Promise.all([getImageUrl])
       .then(res => {
         this.setState({
@@ -30,7 +32,8 @@ class ArticleItem extends Component {
   render() {
     const { title, id } = this.props.article;
     const { imgUrl, isLoaded } = this.state;
-
+    console.log(this.state)
+    console.log(this.props)
     if (isLoaded) {
       return (
         <Link to={`/article/${id}`}>

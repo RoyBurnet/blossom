@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ArticleImage from '../../components/articleImage/articleImage';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
 
 import './ArticlePage.css';
 
@@ -13,16 +14,17 @@ import ArticleItem from '../../components/articleItem/articleItem';
 // import ArticleThree from '../../components/articleThree/afticleThree';
 class ArticlePage extends Component {
   state = {
+    articleId: this.props.match.params.id,
     article: {},
     isLoaded: false,
     articles: [],
-    trigger: false
+    trigger: false,
+    media: []
   };
-
 
   componentDidMount() {
     const getArticle = axios.get(
-      `https://fesinternet.nl/api/wp-json/wp/v2/article/${this.props.match.params.id}`
+      `https://fesinternet.nl/api/wp-json/wp/v2/article/${this.state.articleId}`
     );
 
     const getMultipleArticles = axios.get(
@@ -39,24 +41,23 @@ class ArticlePage extends Component {
     );
   }
 
-  // componentWillReceiveProps(nextProps) {
-    
-  //   if (nextProps.history.location.pathname !== this.props.location.pathname) {
-  //     const getArticle = axios.get(
-  //       `https://fesinternet.nl/api/wp-json/wp/v2/article/${this.props.match.params.id}`
-  //     );
+  handleClick(e, id) {
+    this.setState({
+      isLoaded: false
+    });
 
-  //     Promise.all([getArticle]).then(res => {
-  //       this.setState({
-  //         article: res[0].data
-  //       });
-  //     });
-  //   }
-  //   //  this.props.history.push(`${nextProps.history.location.pathname}`)
-  // }
+    axios
+      .get(`https://fesinternet.nl/api/wp-json/wp/v2/article/${id}`)
+      .then(res => {
+        this.setState({
+          article: res.data,
+          isLoaded: true
+        });
+      });
+  }
 
   render() {
-    const { article, isLoaded, articles, media} = this.state;
+    const { article, isLoaded, articles, media } = this.state;
     const image = article.featured_media;
     if (isLoaded) {
       return (
@@ -73,13 +74,35 @@ class ArticlePage extends Component {
           <Container>
             <Row>
               {articles.map(article => (
-                <Col xs>
-                  <ArticleItem
-                    articleImg={media}
-                    article={article}
-                    key={article.id}
-                  />
-                </Col>
+                // <Col xs>
+                //   <ArticleItem
+                //     articleImg={media}
+                //     article={article}
+                //     key={article.id}
+                //   />
+                // </Col>
+                <Link
+                  to={`/article/${article.id}`}
+                  onClick={e => this.handleClick(e, article.id)}
+                >
+                  <Card className="cardBox">
+                    <Card.Img
+                      src={`https://fesinternet.nl/api/wp-json/wp/v2/media/${image}`}
+                      className="image"
+                    />
+                    <Card.ImgOverlay
+                      style={{
+                        backgroundColor: '#ff0099',
+                        opacity: '0.2',
+                        clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)'
+                      }}
+                    >
+                      <Card.Title style={{ color: 'white', fontSize: '30px' }}>
+                        {article.title.rendered}
+                      </Card.Title>
+                    </Card.ImgOverlay>
+                  </Card>
+                </Link>
               ))}
             </Row>
           </Container>
@@ -90,4 +113,4 @@ class ArticlePage extends Component {
   }
 }
 
-export default withRouter(ArticlePage);
+export default ArticlePage;
