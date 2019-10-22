@@ -7,6 +7,7 @@ import Player from '../../components/Player/Player';
 import NotableEvents from '../../components/NotableEvents/notableEvents';
 
 import './Home.css';
+import ArticleThree from '../../components/articleThree/afticleThree';
 
 class Home extends Component {
   state = {
@@ -32,6 +33,7 @@ class Home extends Component {
             <Image className="img" fluid src={featuredMedia} />
           </div>
           <Articles />
+          {/* <ArticleThree/> */}
           <div className="playerWrapper">
             <Player />
           </div>

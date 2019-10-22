@@ -10,7 +10,7 @@ import Card from 'react-bootstrap/Card';
 
 import './ArticlePage.css';
 
-import ArticleItem from '../../components/articleItem/articleItem';
+// import ArticleItem from '../../components/articleItem/articleItem';
 // import ArticleThree from '../../components/articleThree/afticleThree';
 class ArticlePage extends Component {
   state = {
@@ -41,7 +41,7 @@ class ArticlePage extends Component {
     );
   }
 
-  handleClick(e, id) {
+  handleClick = (id) => {
     this.setState({
       isLoaded: false
     });
@@ -54,6 +54,8 @@ class ArticlePage extends Component {
           isLoaded: true
         });
       });
+    console.log(id)
+
   }
 
   render() {
@@ -74,35 +76,15 @@ class ArticlePage extends Component {
           <Container>
             <Row>
               {articles.map(article => (
-                // <Col xs>
-                //   <ArticleItem
-                //     articleImg={media}
-                //     article={article}
-                //     key={article.id}
-                //   />
-                // </Col>
-                <Link
-                  to={`/article/${article.id}`}
-                  onClick={e => this.handleClick(e, article.id)}
-                >
-                  <Card className="cardBox">
-                    <Card.Img
-                      src={`https://fesinternet.nl/api/wp-json/wp/v2/media/${image}`}
-                      className="image"
-                    />
-                    <Card.ImgOverlay
-                      style={{
-                        backgroundColor: '#ff0099',
-                        opacity: '0.2',
-                        clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)'
-                      }}
-                    >
-                      <Card.Title style={{ color: 'white', fontSize: '30px' }}>
-                        {article.title.rendered}
-                      </Card.Title>
-                    </Card.ImgOverlay>
-                  </Card>
-                </Link>
+                <Col xs>
+                  <ArticlePageItem
+                    articleImg={media}
+                    article={article}
+                    key={article.id}
+                    onClick={this.handleClick}
+                  />
+                </Col>
+
               ))}
             </Row>
           </Container>
@@ -110,6 +92,62 @@ class ArticlePage extends Component {
       );
     }
     return <h3>Is loading. ...</h3>;
+  }
+}
+
+class ArticlePageItem extends Component {
+  state = {
+    imgUrl: '',
+    isLoaded: false
+  };
+
+  componentDidMount() {
+    const { featured_media } = this.props.article;
+    const getImageUrl = axios.get(
+      `https://fesinternet.nl/api/wp-json/wp/v2/media/${featured_media}`
+    );
+
+    Promise.all([getImageUrl])
+      .then(res => {
+        this.setState({
+          imgUrl: res[0].data.media_details.sizes.full.source_url,
+          isLoaded: true
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+  HandleClick = (id) => {
+    this.props.onClick(id)
+  }
+
+  render() {
+    console.log(this.props)
+    const { title, id } = this.props.article;
+    const { imgUrl, isLoaded  } = this.state;
+    if (isLoaded) {
+      return (
+        <Link to={`/article/${id}`}
+        onClick={(e) => this.HandleClick(id)}
+        >
+          <Card className="cardBox">
+            <Card.Img src={imgUrl} className="image" />
+            <Card.ImgOverlay
+              style={{
+                backgroundColor: '#ff0099',
+                opacity: '0.2',
+                clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)'
+              }}
+            >
+              <Card.Title style={{ color: 'white', fontSize: '30px' }}>
+                {title.rendered}
+              </Card.Title>
+            </Card.ImgOverlay>
+          </Card>
+         </Link>
+      );
+    }
+    return <h3>Loading ...</h3>;
   }
 }
 
