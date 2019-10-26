@@ -17,6 +17,7 @@ export default class Header extends Component {
         collapseOnSelect
         className="menu"
         sticky="top"
+        fluid
       >
         <Navbar.Brand href="/">
           <Image src={logo} className="menulogo" />
