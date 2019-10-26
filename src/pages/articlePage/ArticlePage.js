@@ -41,7 +41,7 @@ class ArticlePage extends Component {
     );
   }
 
-  handleClick = (id) => {
+  handleClick = id => {
     this.setState({
       isLoaded: false
     });
@@ -54,9 +54,8 @@ class ArticlePage extends Component {
           isLoaded: true
         });
       });
-    console.log(id)
-
-  }
+    console.log(id);
+  };
 
   render() {
     const { article, isLoaded, articles, media } = this.state;
@@ -84,7 +83,6 @@ class ArticlePage extends Component {
                     onClick={this.handleClick}
                   />
                 </Col>
-
               ))}
             </Row>
           </Container>
@@ -117,19 +115,17 @@ class ArticlePageItem extends Component {
       .catch(err => console.log(err));
   }
 
-  HandleClick = (id) => {
-    this.props.onClick(id)
-  }
+  HandleClick = id => {
+    this.props.onClick(id);
+  };
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
     const { title, id } = this.props.article;
-    const { imgUrl, isLoaded  } = this.state;
+    const { imgUrl, isLoaded } = this.state;
     if (isLoaded) {
       return (
-        <Link to={`/article/${id}`}
-        onClick={(e) => this.HandleClick(id)}
-        >
+        <Link to={`/article/${id}`} onClick={e => this.HandleClick(id)}>
           <Card className="cardBox">
             <Card.Img src={imgUrl} className="image" />
             <Card.ImgOverlay
@@ -144,7 +140,7 @@ class ArticlePageItem extends Component {
               </Card.Title>
             </Card.ImgOverlay>
           </Card>
-         </Link>
+        </Link>
       );
     }
     return <h3>Loading ...</h3>;

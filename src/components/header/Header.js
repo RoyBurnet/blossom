@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -6,13 +6,21 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 import Image from 'react-bootstrap/Image';
 import logo from '../../images/cblogo.svg';
-import "./Header.css"
-  
-  export default class Header extends Component {
-    render() {
-      return (
-        <Navbar  bg="white" expand="lg" collapseOnSelect className="menu">
-        <Navbar.Brand href="/"><Image src={logo} className="menulogo"/></Navbar.Brand>
+import './Header.css';
+
+export default class Header extends Component {
+  render() {
+    return (
+      <Navbar
+        bg="white"
+        expand="lg"
+        collapseOnSelect
+        className="menu"
+        sticky="top"
+      >
+        <Navbar.Brand href="/">
+          <Image src={logo} className="menulogo" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -28,7 +36,6 @@ import "./Header.css"
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      )
-    }
+    );
   }
-
+}

@@ -4,6 +4,6 @@
   margin: 10px;
 }
  .menu{
-  /* position: fixed;
-  z-index: 100; */
+  position: fixed;
+  z-index: 100;
  }

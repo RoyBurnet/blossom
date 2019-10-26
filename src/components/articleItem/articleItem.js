@@ -28,7 +28,6 @@ class ArticleItem extends Component {
   }
 
   render() {
-    console.log(this.props)
     const { title, id } = this.props.article;
     const { imgUrl, isLoaded  } = this.state;
     if (isLoaded) {
