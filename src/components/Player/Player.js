@@ -5,7 +5,7 @@ import "./Player.css"
 export default class Player extends Component {
   render () {
     return ( <div className="player"> <MixCloudPlayer url='https://www.mixcloud.com/KioskRadio/mono-with-mo-jakob-kiosk-radio-13102019/
-    '    width='100%'
+    '    width='996px'
     height='100%'/> </div>)
   }
 }

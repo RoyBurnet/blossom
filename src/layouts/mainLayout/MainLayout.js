@@ -8,10 +8,13 @@ export default class Layout extends Component {
     return (
       <>
         <Header />
+        <div>
         {this.props.children}
+        </div>
+
         <div className="footer-stick">
             <div className="footer-content">Concrete Blossom</div>
-          </div>
+        </div>
       </>
     );
   }

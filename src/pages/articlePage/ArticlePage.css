@@ -2,13 +2,14 @@
   color: #ff0099;
   max-width: 600px;
 
-  margin-left:  60px;
+  margin-left:  35px;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .articleContent {
     padding: 20px;
-    margin-left:  0px;
+
   }
 }
+
 

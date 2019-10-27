@@ -4,15 +4,22 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+/* 
 .img {
   width: 996px;
   margin-left: -45px;
-}
+} */
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .banner {
     max-height: 300px
+  }
+  .img {
+    margin-left: 0px;
+  }
+
+  .articles {
+    margin-left: 40px;
   }
 }
 
