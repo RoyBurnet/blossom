@@ -29,9 +29,6 @@ class About extends Component {
               dangerouslySetInnerHTML={{ __html: aboutData.content.rendered }}
             ></div>
           </div>
-          <div className="footer-stick">
-            <div className="footer-content">Concrete Blossom</div>
-          </div>
         </div>
       );
     }

@@ -1,8 +1,13 @@
 .banner {
   display: flex;
-  max-width: 100%;
+  justify-content: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.img {
+  width: 996px;
+  margin-left: -45px;
 }
 
 @media (max-width: 450px) {
@@ -22,7 +27,6 @@
 }
 
 .footer {
-
   left: 0;
   bottom: 0;
   height: 13px;

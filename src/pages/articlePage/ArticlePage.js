@@ -63,17 +63,20 @@ class ArticlePage extends Component {
     if (isLoaded) {
       return (
         <div>
-          <ArticleImage imageData={image} />
-          <div className="articleContent">
-            <h1>{article.title.rendered}</h1>
-            <div
-              dangerouslySetInnerHTML={{ __html: article.content.rendered }}
-            ></div>
-            <Link to="/">Go Back</Link>
-          </div>
-
           <Container>
             <Row>
+              <Col md="12">
+                <ArticleImage imageData={image} />
+                <div className="articleContent">
+                  <h1>{article.title.rendered}</h1>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: article.content.rendered
+                    }}
+                  ></div>
+                  <Link to="/">Go Back</Link>
+                </div>
+              </Col>
               {articles.map(article => (
                 <Col xs>
                   <ArticlePageItem

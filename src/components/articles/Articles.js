@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import ArticleItem from '../articleItem/articleItem';
-
+import A from './Articles.css'
 export default class Articles extends Component {
   state = {
     articles: [],
@@ -30,7 +30,7 @@ export default class Articles extends Component {
     if (isLoaded) {
       return (
         <Container>
-          <Row>
+          <Row className="no-gutters">
             {articles.map(article => (
               <Col xs>
                 <ArticleItem article={article} key={article.id} />
