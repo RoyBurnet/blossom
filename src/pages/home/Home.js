@@ -4,17 +4,15 @@ import Articles from '../../components/articles/Articles';
 import Image from 'react-bootstrap/Image';
 
 import Player from '../../components/Player/Player';
-import NotableEvents from '../../components/NotableEvents/notableEvents';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Grid from 'react-bootstrap/';
 import 'react-bootstrap/dist/react-bootstrap.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './Home.css';
-import ArticleThree from '../../components/articleThree/afticleThree';
+
 
 class Home extends Component {
   state = {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import ArticleImage from '../../components/articleImage/articleImage';
+import Nieuwsbrief from '../../components/nieuwsbrief/nieuwsbrief';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -78,16 +79,20 @@ class ArticlePage extends Component {
                 </div>
               </Col>
               {articles.map(article => (
-                <Col xs style={{marginBottom: "50px"}}>
+                <Col  style={{ marginBottom: '50px' }}>
                   <ArticlePageItem
                     articleImg={media}
                     article={article}
                     key={article.id}
                     onClick={this.handleClick}
-                    
                   />
                 </Col>
               ))}
+            </Row>
+            <Row>
+              <Col>
+                <Nieuwsbrief />
+              </Col>
             </Row>
           </Container>
         </div>
