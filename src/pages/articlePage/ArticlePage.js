@@ -78,12 +78,13 @@ class ArticlePage extends Component {
                 </div>
               </Col>
               {articles.map(article => (
-                <Col xs>
+                <Col xs style={{marginBottom: "50px"}}>
                   <ArticlePageItem
                     articleImg={media}
                     article={article}
                     key={article.id}
                     onClick={this.handleClick}
+                    
                   />
                 </Col>
               ))}
