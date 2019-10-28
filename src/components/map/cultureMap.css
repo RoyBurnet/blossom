@@ -1,9 +1,7 @@
-.osso1 {
-
-}
 .osso1:hover {
   fill: aqua;
   stroke-dasharray: 2,2;
   stroke: #646464;
   stroke-width: 1px;
+  cursor: pointer;
 }
