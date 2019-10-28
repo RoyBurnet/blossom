@@ -34,6 +34,9 @@ export default class Header extends Component {
             <LinkContainer to={'/about'}>
               <Nav.Link>About</Nav.Link>
             </LinkContainer>
+            <LinkContainer to={'/map'}>
+              <Nav.Link>Map</Nav.Link>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

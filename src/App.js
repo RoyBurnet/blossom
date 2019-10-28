@@ -8,6 +8,7 @@ import EventPage from './pages/eventPage/eventPage';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
 import ContactPage from './pages/contact/ContactPage';
+import MapPage from './pages/mapPage/mapPage';
 
 import './App.css';
 
@@ -23,6 +24,7 @@ class App extends Component {
               <Route path="/event/:id" component={EventPage} />
               <Route exact path="/contact" component={ContactPage} />
               <Route exact path="/about" component={About} />
+              <Route exact path="/map" component={MapPage} />
             </Switch>
           </Layout>
         </div>
