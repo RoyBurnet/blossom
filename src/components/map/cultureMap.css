@@ -5,3 +5,8 @@
   stroke-width: 1px;
   cursor: pointer;
 }
+
+.locationTitle{
+  height: 50px;
+  padding: 10px;
+}

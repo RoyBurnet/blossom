@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Articles from '../../components/articles/Articles';
 import Image from 'react-bootstrap/Image';
+import Events from '../../components/NotableEvents/notableEvents';
 
 import Player from '../../components/Player/Player';
 
@@ -12,7 +13,6 @@ import 'react-bootstrap/dist/react-bootstrap.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './Home.css';
-
 
 class Home extends Component {
   state = {
@@ -36,14 +36,12 @@ class Home extends Component {
         <Container>
           <Row>
             <Col md="12">
-              {/* <div className="banner"> */}
               <Image
                 className="img"
                 fluid
                 src={featuredMedia}
                 style={{ height: '300px' }}
               />
-              {/* </div> */}
             </Col>
 
             <Col md="12">
@@ -55,6 +53,7 @@ class Home extends Component {
               </div>
             </Col>
           </Row>
+          <Events />
         </Container>
       );
     }

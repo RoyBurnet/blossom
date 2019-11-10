@@ -31,8 +31,8 @@ export default class notableEvents extends Component {
     console.log(this.state);
     if (isLoaded) {
       return (
-        <div>
-          <h2>Notable Events</h2>
+        <div style={{marginBottom: "20px"}}>
+          <h2 style={{ color: '#ff0099'}}>Notable Events</h2>
 
           <Container>
             <Row>
@@ -55,7 +55,7 @@ export default class notableEvents extends Component {
                     </Card.ImgOverlay>
                   </Card>
                 </Link>
-              </Col>
+              {/* </Col>
               <Col>
                 <Link to={`/event/${event2.id}`}>
                   <Card className="cardBox">
@@ -94,7 +94,7 @@ export default class notableEvents extends Component {
                       </Card.Title>
                     </Card.ImgOverlay>
                   </Card>
-                </Link>
+                </Link> */}
               </Col>
             </Row>
           </Container>

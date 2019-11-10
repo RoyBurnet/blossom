@@ -3,26 +3,30 @@ import Popup from 'reactjs-popup';
 import './cultureMap.css';
 
 class cultureMap extends Component {
-state = {
-  title: ''
-}
+  state = {
+    title: ''
+  };
 
   handleClick = e => {
-    const currentLocation = e.currentTarget.getAttribute('value')
+    const currentLocation = e.currentTarget.getAttribute('value');
     this.setState({
       title: currentLocation
-    })
+    });
   };
 
   render() {
     return (
       <div>
-        <h1 style={{overflow: "hidden"}}>{this.state.title}</h1>
+        <div className="locationTitle">
+          <h1>{this.state.title}</h1>
+        </div>
+        <hr />
         <svg
+          sytle={{ overflow: 'hidden' }}
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
-          width="367mm"
-          height="250mm"
+          width="1000px"
+          height="800px"
           version="1.1"
           viewBox="0 0 467 350"
         >
